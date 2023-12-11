@@ -1,22 +1,24 @@
-// src/App.tsx
-
 import React from 'react';
 import './App.css';
 import { CreateLetter } from './components/CreateLetter';
+import { RetrieveLetterById } from './components/RetrieveLetterById';
+import { NavbarMain } from './components/NavbarMain';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  // Main application logic (if any) goes here
-
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* Add navigation or heading here if desired */}
-      </header>
-      <main>
-        <CreateLetter />
-        {/* Additionally, add components for RetrieveLetter and ListLetters */}
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          {<NavbarMain />}
+        </header>
+        <main>
+          <CreateLetter />
+          <RetrieveLetterById />
+          {/* Additionally, add components for RetrieveLetter and ListLetters */}
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 

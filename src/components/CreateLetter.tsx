@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 interface Address {
     firstName: string;
@@ -94,183 +95,179 @@ export const CreateLetter: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>
-                    Description:
-                    <input
-                        type="text"
-                        name="description"
-                        value={letterData.description}
-                        onChange={handleDescriptionChange}
-                    />
-                </label>
-            </div>
-            <div>
-                <label>
-                    PDF URL:
-                    <input
-                        type="text"
-                        name="pdf"
-                        value={letterData.pdf}
-                        onChange={handlePdfChange}
-                    />
-                </label>
-            </div>
+        <Form onSubmit={handleSubmit} style={{padding: "20px"}}>
+            <FormGroup>
+                <Label for="description">Description:</Label>
+                <Input
+                    type="text"
+                    name="description"
+                    value={letterData.description}
+                    onChange={handleDescriptionChange}
+                />
+            </FormGroup>
+            <FormGroup>
+                <Label for="pdf">PDF URL:</Label>
+                <Input
+                    type="text"
+                    name="pdf"
+                    value={letterData.pdf}
+                    onChange={handlePdfChange}
+                />
+            </FormGroup>
             <fieldset>
                 <legend>To Address:</legend>
-                <label>
-                    First Name:
-                    <input
+                <FormGroup>
+                    <Label for="firstName">First Name:</Label>
+                    <Input
                         type="text"
                         name="firstName"
                         value={letterData.to.firstName}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    Last Name:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="lastName">Last Name:</Label>
+                    <Input
                         type="text"
                         name="lastName"
                         value={letterData.to.lastName}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    Company Name:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="companyName">Company Name:</Label>
+                    <Input
                         type="text"
                         name="companyName"
                         value={letterData.to.companyName}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    Address Line 1:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="addressLine1">Address Line 1:</Label>
+                    <Input
                         type="text"
                         name="addressLine1"
                         value={letterData.to.addressLine1}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    City:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="city">City:</Label>
+                    <Input
                         type="text"
                         name="city"
                         value={letterData.to.city}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    State/Province:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="provinceOrState">State/Province:</Label>
+                    <Input
                         type="text"
                         name="provinceOrState"
                         value={letterData.to.provinceOrState}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    Postal/Zip Code:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="postalOrZip">Postal/Zip Code:</Label>
+                    <Input
                         type="text"
                         name="postalOrZip"
                         value={letterData.to.postalOrZip}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
-                <label>
-                    Country Code:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="countryCode">Country Code:</Label>
+                    <Input
                         type="text"
                         name="countryCode"
                         value={letterData.to.countryCode}
                         onChange={(e) => handleInputChange(e, 'to')}
                     />
-                </label>
+                </FormGroup>
             </fieldset>
 
             <fieldset>
                 <legend>From Address:</legend>
-                <label>
-                    First Name:
-                    <input
+                <FormGroup>
+                    <Label for="firstName">First Name:</Label>
+                    <Input
                         type="text"
                         name="firstName"
                         value={letterData.from.firstName}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    Last Name:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="lastName">Last Name:</Label>
+                    <Input
                         type="text"
                         name="lastName"
                         value={letterData.from.lastName}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    Company Name:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="companyName">Company Name:</Label>
+                    <Input
                         type="text"
                         name="companyName"
                         value={letterData.from.companyName}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    Address Line 1:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="addressLine1">Address Line 1:</Label>
+                    <Input
                         type="text"
                         name="addressLine1"
                         value={letterData.from.addressLine1}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    City:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="city">City:</Label>
+                    <Input
                         type="text"
                         name="city"
                         value={letterData.from.city}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    State/Province:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="provinceOrState">State/Province:</Label>
+                    <Input
                         type="text"
                         name="provinceOrState"
                         value={letterData.from.provinceOrState}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    Postal/Zip Code:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="postalOrZip">Postal/Zip Code:</Label>
+                    <Input
                         type="text"
                         name="postalOrZip"
                         value={letterData.from.postalOrZip}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
-                <label>
-                    Country Code:
-                    <input
+                </FormGroup>
+                <FormGroup>
+                    <Label for="countryCode">Country Code:</Label>
+                    <Input
                         type="text"
                         name="countryCode"
                         value={letterData.from.countryCode}
                         onChange={(e) => handleInputChange(e, 'from')}
                     />
-                </label>
+                </FormGroup>
             </fieldset>
 
-            <button type="submit">Create Letter</button>
-        </form>
+            <Button type="submit">Create Letter</Button>
+        </Form>
     );
 };
 
